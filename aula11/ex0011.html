@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pais</title>
+</head>
+<body>
+    <h1>País de origem.</h1>
+    Em qual País você vive? <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Informar" id="botaoInformar">
+    <div class="res">
+
+    </div>
+<script>
+    var InfPaisDeMoradia = window.document.querySelector("input#botaoInformar")
+    InfPaisDeMoradia.addEventListener('click', paisDeMoradia)
+
+    function paisDeMoradia() {
+        var paisInformado = document.querySelector("input#txtpais").value;
+        var res = document.querySelector("div.res")
+    
+        res.innerHTML = `<p>Morando no <strong>${paisInformado}</strong></p>`
+        if(paisInformado == "Brasil") {
+            res.innerHTML += `<p>Você é <strong>Brasileiro</strong>!</p>`
+        } else {
+            res.innerHTML += `<p>Você é <strong>estrangeiro</strong>!</p>`
+        }
+    }
+    
+</script>
+</body>
+</html>
