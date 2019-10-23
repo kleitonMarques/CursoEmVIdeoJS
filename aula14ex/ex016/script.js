@@ -11,7 +11,7 @@ function executarContagem(){
         fim = Number(fim.value)
         passo = Number(passo.value)
 
-        if(passo == 0) {
+        if(passo < 1) {
             passo = 1
             alertErroZero(passo)
         }
