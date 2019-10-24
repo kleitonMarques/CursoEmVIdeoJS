@@ -20,12 +20,21 @@ function executarContagem(){
             alert(`Passo inválido! Considerando PASSO ${passo}`)
         }
 
-        res.innerHTML = "Contando:<br>"
-        for(i = inicio; i <= fim; i+=passo) {
-            res.innerHTML += i
-            res.innerHTML += String.fromCodePoint(128073)
+        if(inicio < fim) {
+            // Contagem crescente
+            res.innerHTML = "Contando:<br>"
+            for(i = inicio; i <= fim; i+=passo) {
+                res.innerHTML += ` ${i} \u{1F449}`
+            }
+            res.innerHTML += `\u{1F3C1}`
+        } else {
+            // Contagem regressiva
+            res.innerHTML = "Contando:<br>"
+            for(i = inicio; i >= fim; i-=passo) {
+                res.innerHTML += ` ${i} \u{1F449}`
+            }
+            res.innerHTML += `\u{1F3C1}`
         }
-        res.innerHTML += String.fromCodePoint(128681)
     }
 }
 
