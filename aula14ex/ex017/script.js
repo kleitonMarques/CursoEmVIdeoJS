@@ -6,14 +6,14 @@ function gerarTabuada(){
         alert("Por favor, digite um número!")
         numeroTabuada.focus()
     } else {
-        espacoTabuada.setAttribute("size", "10")
         espacoTabuada.innerHTML = ""
         numeroTabuada = Number(numeroTabuada.value)
         for(i = 1; i <= 10; i++) {
-            espacoTabuada.innerHTML += "<option>" + numeroTabuada + " x " + i + " = " + numeroTabuada*i + "</option>"
-            // console.log(numeroTabuada + " x " + i + " = " + numeroTabuada*i)
+            let item = document.createElement('option')
+            item.text = `${numeroTabuada} x ${i} = ${numeroTabuada*i}`
+            item.value = `tab${i}`
+            espacoTabuada.appendChild(item)
         }
-        
     }
 }
 
